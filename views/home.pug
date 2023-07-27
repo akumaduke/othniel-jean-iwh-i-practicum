@@ -1,0 +1,22 @@
+
+doctype html
+html 
+     head 
+         title= `${title}`
+         meta(name="viewport" content="width=device-width, initial-scale=1")
+         link(rel="stylesheet", href="/css/style.css")
+     body    
+        h1 Custom objects table
+         a(href="/update-cobj") Add/Update this table
+        table(style='width:60%', border='1')
+            tr
+            th name
+            th couleur
+            th chambre 
+            each maison in data
+                tr 
+                th  #{data.name} 
+                th  #{data.couleur}
+                th  #{data.chambre}
+
+        
