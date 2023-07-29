@@ -10,11 +10,11 @@ html
          h1 Maisons
          form(action='/update-cobj', method='POST')
          
-            | name: 
+            | name(string): 
             input(type='text', name='name')
-            |          couleur: 
+            |          couleur(string): 
             input(type='text', name='couleur')
-            |          chambre: 
+            |          chambre(number): 
             input(type='text', name='chambre') 
             |          envoi 
             input(type="submit", name="tet")

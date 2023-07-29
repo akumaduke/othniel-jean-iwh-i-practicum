@@ -13,10 +13,10 @@ html
             th name
             th couleur
             th chambre 
-            each maison in data
+            each maison in real_data_transformed
                 tr 
-                th  #{data.name} 
-                th  #{data.couleur}
-                th  #{data.chambre}
+                th  #{maison.properties.name} 
+                th  #{maison.properties.couleur}
+                th  #{maison.properties.chambre}
 
         
