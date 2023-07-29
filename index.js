@@ -9,7 +9,6 @@ app.use(express.json());
 
 // * Please include the private app access token in your repo BUT only an access token built in a TEST ACCOUNT. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS = 'pat-na1-e3257a32-21fa-4820-9d90-9703b3daf671';
-const list ={}
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 app.get('/', async (req, res) => {
@@ -18,20 +17,7 @@ app.get('/', async (req, res) => {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
     }
-    function transformerEnObjet(element) {
-        return {
-          id: element.id,
-          chambre: element.properties.chambre,
-          couleur: element.properties.couleur,
-          hs_createdate: element.properties.hs_createdate,
-          hs_lastmodifieddate: element.properties.hs_lastmodifieddate,
-          hs_object_id: element.properties.hs_object_id,
-          name: element.properties.name,
-          createdAt: element.createdAt,
-          updatedAt: element.updatedAt,
-          archived: element.archived,
-        };
-      }
+    
     try {
         const response = await axios.get(maisons, { headers });
         const data = response.data.results;
